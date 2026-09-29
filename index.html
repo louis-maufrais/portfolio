@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Louis Maufrais · Rendre la donnée lisible pour décider</title>
-  <meta name="description" content="Portfolio professionnel : intelligibilisation de la donnée, architecture de reporting et pilotage médico-social à La Réunion et Mayotte." />
+  <title>Louis Maufrais · Data analyse et optimisation de process</title>
+  <meta name="description" content="Portfolio professionnel : data analyse, optimisation de process, architecture de reporting et pilotage médico-social à La Réunion et Mayotte." />
   <style>
     :root {
       --ink: #171917;
@@ -76,8 +76,8 @@
 
     h1 {
       font-family: var(--serif); font-weight: 500;
-      font-size: clamp(3.8rem, 8vw, 8rem);
-      line-height: .92; letter-spacing: -.055em;
+      font-size: clamp(3rem, 6.4vw, 6.2rem);
+      line-height: .96; letter-spacing: -.05em;
       max-width: 1000px;
     }
     h1 em { font-style: italic; color: var(--bronze); }
@@ -125,6 +125,14 @@
     .chain-step-num { font-family: var(--mono); font-size: .62rem; color: var(--bronze); letter-spacing: .12em; margin-bottom: 10px; }
     .chain-step-label { font-family: var(--serif); font-size: 1.05rem; color: var(--ink); margin-bottom: 8px; }
     .chain-step-desc { font-size: .84rem; color: var(--muted); line-height: 1.55; }
+
+    .hero-figures { margin-top: 44px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .fig-num { font-family: var(--serif); font-size: 2.5rem; line-height: 1; color: var(--teal-dark); letter-spacing: -.03em; }
+    .fig-label { margin-top: 8px; font-size: .86rem; color: var(--muted); line-height: 1.5; }
+
+    .case-visual { margin-top: 28px; background: #1e2321; border-radius: 18px; padding: 26px; overflow-x: auto; }
+    .visual-caption { margin-top: 10px; font-family: var(--mono); font-size: .62rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+    .sub-label { font-family: var(--mono); font-size: .7rem; letter-spacing: .16em; text-transform: uppercase; color: var(--teal); }
 
     /* SECTIONS */
     section { position: relative; z-index: 1; padding: 108px var(--pad); }
@@ -235,6 +243,7 @@
     .case-num { font-family: var(--serif); font-size: 5.5rem; line-height: .8; color: var(--paper-3); }
     .case-domain { margin-top: 20px; font-family: var(--mono); color: var(--teal); font-size: .68rem; text-transform: uppercase; letter-spacing: .12em; line-height: 1.7; }
 
+    .case-content { min-width: 0; }
     .case-content h3 {
       font-family: var(--serif); font-weight: 500;
       font-size: clamp(1.7rem, 2.5vw, 2.5rem);
@@ -261,6 +270,11 @@
     }
     .case-result .result-label { font-family: var(--mono); font-size: .65rem; letter-spacing: .14em; text-transform: uppercase; color: var(--teal); margin-bottom: 12px; }
     .case-result p { font-size: 1.02rem; line-height: 1.75; color: var(--ink); }
+
+    .other-grid { margin-top: 26px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .other { background: var(--paper-2); border: 1px solid var(--line); border-radius: 20px; padding: 26px; }
+    .other h3 { font-family: var(--serif); font-weight: 500; font-size: 1.18rem; line-height: 1.25; margin-bottom: 10px; }
+    .other p { font-size: .93rem; color: var(--ink-soft); line-height: 1.65; }
 
     /* MÉTHODES */
     .method-grid { margin-top: 52px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
@@ -319,6 +333,8 @@
       .split-line { display: none; }
     }
 
+    @media (max-width: 1060px) { .hero-figures { grid-template-columns: 1fr 1fr; } .other-grid { grid-template-columns: 1fr; } }
+
     @media (max-width: 720px) {
       .nav-links { display: none; }
       .hero-chain { grid-template-columns: 1fr 1fr; }
@@ -333,10 +349,10 @@
   <nav>
     <a href="#accueil" class="brand">Louis <span>Maufrais</span></a>
     <ul class="nav-links">
-      <li><a href="#productions">Productions</a></li>
-      <li><a href="#architecture">Architecture</a></li>
       <li><a href="#cas">Études de cas</a></li>
+      <li><a href="#competences">Compétences</a></li>
       <li><a href="#parcours">Parcours</a></li>
+      <li><a href="#architecture">Méthode</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -344,24 +360,248 @@
   <!-- HERO -->
   <header id="accueil">
     <div class="hero">
-      <div class="eyebrow">La Réunion · Mayotte · Données publiques et médico-sociales</div>
+      <div class="eyebrow">Data analyse · Optimisation de process · La Réunion · Mayotte</div>
 
-      <h1>Rendre la donnée lisible,<br><em>pour décider.</em></h1>
+      <h1>Data analyse et<br>optimisation de process,<br><em>pour décider.</em></h1>
 
       <p class="hero-subtitle">
-        Mon entrée dans le pilotage de la performance ne s'est pas faite par goût du chiffre ou des outils. Elle est née d'un enjeu de probité et d'efficacité publique : celui d'une association médico-sociale confrontée aux exigences de rationalisation et de traçabilité à la suite d'un contrôle externe exigeant.
+        J'aide les directions à piloter avec des chiffres fiables : je remplace les fichiers dispersés et les ressaisies par des flux de données automatisés, contrôlés et lisibles. Mon terrain : le secteur médico-social et public, à La Réunion et Mayotte.
       </p>
 
-      <p class="doctrine">
-        Mon regard sur ce problème vient d'ailleurs. Je suis géographe de formation. La géographie, c'est pouvoir faire de tout, à condition d'en sortir : prendre le temps de décrire avant d'interpréter, lire un système avant d'en isoler les composantes. Dans un audit ou un outil de reporting, c'est cette lenteur méthodique qui conditionne la qualité des décisions qui suivent.
-      </p>
 
       <div class="hero-actions">
         <a class="btn btn-primary" href="#cas">Lire les études de cas</a>
-        <a class="btn btn-secondary" href="#productions">Voir les productions</a>
+        <a class="btn btn-secondary" href="#parcours">Voir mon parcours</a>
       </div>
 
-      <div class="hero-chain">
+      <div class="hero-figures">
+        <div><div class="fig-num">50</div><div class="fig-label">structures dont l'activité est suivie dans le reporting</div></div>
+        <div><div class="fig-num">~150</div><div class="fig-label">salariés qui alimentent ces données</div></div>
+        <div><div class="fig-num">76,6 %</div><div class="fig-label">de données conformes mesurées dès la première version</div></div>
+        <div><div class="fig-num">1</div><div class="fig-label">seule source de vérité pour le pilotage et les rapports d'activité</div></div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ÉTUDES DE CAS -->
+  <section id="cas">
+    <div class="inner">
+      <div class="section-label">01 · Études de cas</div>
+      <h2>Quatre réalisations,<br>une ligne de conduite.</h2>
+      <p class="section-intro">Décrire avant d'interpréter, contrôler avant de publier, restituer pour décider. Ces projets sont différents par leur contexte et leurs outils. La posture est la même.</p>
+
+      <div class="case-list">
+        <article class="case-article">
+          <div>
+            <div class="case-num">01</div>
+            <div class="case-domain">Data analyse<br>Pilotage multi-services</div>
+          </div>
+          <div class="case-content">
+            <h3>Un pilotage unique de l'activité de 50 structures</h3>
+            <div class="case-block"><div class="case-block-label">Problème</div><p>L'activité de 50 structures était suivie dans des fichiers différents, avec des règles de saisie propres à chacun. Avant la réalisation des rapports d'activité, deux versions des chiffres coexistaient : celle du pilotage et celle des rapports.</p></div>
+            <div class="case-block"><div class="case-block-label">Action</div><p>J'ai normalisé les bases de saisie par service, automatisé la consolidation en traçant l'origine de chaque donnée, ajouté des contrôles qualité (doublons, incohérences, champs manquants) et construit le tableau de bord de restitution pour la direction.</p></div>
+            <div class="case-result"><div class="result-label">Résultat</div><p>Pilotage et rapports d'activité reposent désormais sur les mêmes données : plus de double vérité. Dès la première version, 76,6 % des données étaient conformes, et les 23,4 % restants étaient identifiés, localisés par service et attribuables à la personne qui les corrige. Environ 150 salariés alimentent ce dispositif.</p></div>
+            
+            <div class="case-visual">
+            <div style="font-family:var(--mono); font-size:.62rem; letter-spacing:.1em; text-transform:uppercase; color:rgba(201,173,126,.7); margin-bottom:18px;">Maquette illustrative · Données fictives · Looker Studio</div>
+            <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-bottom:14px; width:100%;">
+              <div style="background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); border-radius:12px; padding:14px;">
+                <div style="font-family:Georgia,serif; font-size:1.6rem; color:#c9ad7e; line-height:1;">128</div>
+                <div style="font-size:.7rem; color:rgba(244,240,232,.5); margin-top:6px;">Adultes</div>
+              </div>
+              <div style="background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); border-radius:12px; padding:14px;">
+                <div style="font-family:Georgia,serif; font-size:1.6rem; color:#c9ad7e; line-height:1;">37</div>
+                <div style="font-size:.7rem; color:rgba(244,240,232,.5); margin-top:6px;">Enfants</div>
+              </div>
+              <div style="background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); border-radius:12px; padding:14px;">
+                <div style="font-family:Georgia,serif; font-size:1.6rem; color:#c9ad7e; line-height:1;">244,8</div>
+                <div style="font-size:.7rem; color:rgba(244,240,232,.5); margin-top:6px;">Nuitées / ménage</div>
+              </div>
+              <div style="background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); border-radius:12px; padding:14px;">
+                <div style="font-family:Georgia,serif; font-size:1.6rem; color:#c9ad7e; line-height:1;">40 392</div>
+                <div style="font-size:.7rem; color:rgba(244,240,232,.5); margin-top:6px;">Nuitées totales</div>
+              </div>
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; width:100%;">
+              <div style="background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); border-radius:12px; padding:14px; display:flex; gap:14px; align-items:center;">
+                <svg width="76" height="76" viewBox="0 0 80 80" style="flex-shrink:0;">
+                  <circle cx="40" cy="40" r="30" fill="none" stroke="#557b79" stroke-width="14" stroke-dasharray="154.6 33.9" transform="rotate(-90 40 40)"/>
+                  <circle cx="40" cy="40" r="30" fill="none" stroke="#a98452" stroke-width="14" stroke-dasharray="30.2 158.3" stroke-dashoffset="-154.6" transform="rotate(-90 40 40)"/>
+                  <circle cx="40" cy="40" r="30" fill="none" stroke="#9a5947" stroke-width="14" stroke-dasharray="3.8 184.7" stroke-dashoffset="-184.8" transform="rotate(-90 40 40)"/>
+                  <text x="40" y="44" text-anchor="middle" fill="#f4f0e8" font-size="11" font-family="Georgia,serif">82 %</text>
+                </svg>
+                <div>
+                  <div style="font-size:.63rem; color:rgba(244,240,232,.45); text-transform:uppercase; letter-spacing:.08em; margin-bottom:8px;">Statut qualité</div>
+                  <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;"><span style="width:8px;height:8px;border-radius:50%;background:#557b79;display:inline-block;flex-shrink:0;"></span><span style="font-size:.74rem;color:rgba(244,240,232,.8);">OK : 82 %</span></div>
+                  <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;"><span style="width:8px;height:8px;border-radius:50%;background:#a98452;display:inline-block;flex-shrink:0;"></span><span style="font-size:.74rem;color:rgba(244,240,232,.8);">Erreurs : 16 %</span></div>
+                  <div style="display:flex;align-items:center;gap:6px;"><span style="width:8px;height:8px;border-radius:50%;background:#9a5947;display:inline-block;flex-shrink:0;"></span><span style="font-size:.74rem;color:rgba(244,240,232,.8);">Doublons : 2 %</span></div>
+                </div>
+              </div>
+              <div style="background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); border-radius:12px; padding:14px;">
+                <div style="font-size:.63rem; color:rgba(244,240,232,.45); text-transform:uppercase; letter-spacing:.08em; margin-bottom:10px;">Erreurs détectées</div>
+                <div style="font-size:.74rem; color:rgba(244,240,232,.75); margin-bottom:6px; display:flex; justify-content:space-between;"><span>Type ménage incohérent</span><span style="color:#c9ad7e;">6</span></div>
+                <div style="font-size:.74rem; color:rgba(244,240,232,.75); margin-bottom:6px; display:flex; justify-content:space-between;"><span>Sortie / statut incohérents</span><span style="color:#c9ad7e;">4</span></div>
+                <div style="font-size:.74rem; color:rgba(244,240,232,.75); margin-bottom:6px; display:flex; justify-content:space-between;"><span>Champs obligatoires manquants</span><span style="color:#c9ad7e;">3</span></div>
+                <div style="font-size:.74rem; color:rgba(244,240,232,.75); margin-bottom:6px; display:flex; justify-content:space-between;"><span>Date de validité manquante</span><span style="color:#c9ad7e;">2</span></div>
+                <div style="font-size:.74rem; color:rgba(244,240,232,.75); display:flex; justify-content:space-between;"><span>Doublon détecté</span><span style="color:#c9ad7e;">2</span></div>
+              </div>
+            </div></div>
+            <div class="visual-caption">Maquette illustrative du tableau de bord qualité, avec des données fictives.</div>
+
+            <div class="case-visual"><div style="overflow-x:auto;"><div style="width:100%; min-width:860px;"><div style="font-family:var(--mono); font-size:.62rem; letter-spacing:.1em; text-transform:uppercase; color:rgba(201,173,126,.7); margin-bottom:18px;">Établissement exemple · Suivi d'activité et facturation · Données fictives<span style="margin-left:16px; color:rgba(244,240,232,.4);">210 €/jour · 20 places · Prévisionnel 96 %</span></div><table style="width:100%; border-collapse:collapse; font-size:.76rem;"><thead><tr><th style="text-align:left;font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(201,173,126,.8);padding:8px 12px;border-bottom:1px solid rgba(255,255,255,.12);white-space:nowrap;">Indicateur</th><th style="text-align:right;font-family:var(--mono);font-size:.6rem;color:rgba(244,240,232,.38);padding:8px 6px;border-bottom:1px solid rgba(255,255,255,.12);">Jan.</th><th style="text-align:right;font-family:var(--mono);font-size:.6rem;color:rgba(244,240,232,.38);padding:8px 6px;border-bottom:1px solid rgba(255,255,255,.12);">Fév.</th><th style="text-align:right;font-family:var(--mono);font-size:.6rem;color:rgba(244,240,232,.38);padding:8px 6px;border-bottom:1px solid rgba(255,255,255,.12);">Mar.</th><th style="text-align:right;font-family:var(--mono);font-size:.6rem;color:rgba(244,240,232,.38);padding:8px 6px;border-bottom:1px solid rgba(255,255,255,.12);">Avr.</th><th style="text-align:right;font-family:var(--mono);font-size:.6rem;color:rgba(244,240,232,.38);padding:8px 6px;border-bottom:1px solid rgba(255,255,255,.12);">Mai</th><th style="text-align:right;font-family:var(--mono);font-size:.6rem;color:rgba(244,240,232,.38);padding:8px 6px;border-bottom:1px solid rgba(255,255,255,.12);">Jun.</th><th style="text-align:right;font-family:var(--mono);font-size:.6rem;color:rgba(244,240,232,.38);padding:8px 6px;border-bottom:1px solid rgba(255,255,255,.12);">Jul.</th><th style="text-align:right;font-family:var(--mono);font-size:.6rem;color:rgba(244,240,232,.38);padding:8px 6px;border-bottom:1px solid rgba(255,255,255,.12);">Aoû.</th><th style="text-align:right;font-family:var(--mono);font-size:.6rem;color:rgba(244,240,232,.38);padding:8px 6px;border-bottom:1px solid rgba(255,255,255,.12);">Sep.</th><th style="text-align:right;font-family:var(--mono);font-size:.6rem;color:rgba(244,240,232,.38);padding:8px 6px;border-bottom:1px solid rgba(255,255,255,.12);">Oct.</th><th style="text-align:right;font-family:var(--mono);font-size:.6rem;color:rgba(244,240,232,.38);padding:8px 6px;border-bottom:1px solid rgba(255,255,255,.12);">Nov.</th><th style="text-align:right;font-family:var(--mono);font-size:.6rem;color:rgba(244,240,232,.38);padding:8px 6px;border-bottom:1px solid rgba(255,255,255,.12);">Déc.</th><th style="text-align:right;font-family:var(--mono);font-size:.6rem;color:rgba(201,173,126,.8);padding:8px 12px;border-bottom:1px solid rgba(255,255,255,.12);">TOTAL</th></tr></thead><tbody><tr style="border-bottom:1px solid rgba(255,255,255,.05);"><td style="padding:9px 12px;color:rgba(244,240,232,.4);font-family:var(--mono);font-size:.68rem;white-space:nowrap;">Volume théorique</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.32);">620</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.32);">560</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.32);">620</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.32);">600</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.32);">620</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.32);">600</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.32);">620</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.32);">620</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.32);">600</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.32);">620</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.32);">600</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.32);">620</td><td style="text-align:right;padding:9px 12px;color:rgba(244,240,232,.38);font-weight:600;">7 300</td></tr><tr style="border-bottom:1px solid rgba(255,255,255,.05);"><td style="padding:9px 12px;color:rgba(244,240,232,.4);font-family:var(--mono);font-size:.68rem;white-space:nowrap;">Volume prévisionnel</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.48);">595</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.48);">538</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.48);">595</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.48);">576</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.48);">595</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.48);">576</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.48);">595</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.48);">595</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.48);">576</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.48);">595</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.48);">576</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.48);">595</td><td style="text-align:right;padding:9px 12px;color:rgba(244,240,232,.52);font-weight:600;">7 007</td></tr><tr style="background:rgba(85,123,121,.08);border-bottom:1px solid rgba(85,123,121,.18);"><td style="padding:10px 12px;color:#c9ad7e;font-weight:600;font-family:var(--mono);font-size:.68rem;white-space:nowrap;">Volume réel mensuel</td><td style="text-align:right;padding:10px 6px;color:#f4f0e8;font-weight:600;">590</td><td style="text-align:right;padding:10px 6px;color:#f4f0e8;font-weight:600;">520</td><td style="text-align:right;padding:10px 6px;color:#f4f0e8;font-weight:600;">585</td><td style="text-align:right;padding:10px 6px;color:#f4f0e8;font-weight:600;">560</td><td style="text-align:right;padding:10px 6px;color:#f4f0e8;font-weight:600;">570</td><td style="text-align:right;padding:10px 6px;color:#f4f0e8;font-weight:600;">540</td><td style="text-align:right;padding:10px 6px;color:#f4f0e8;font-weight:600;">500</td><td style="text-align:right;padding:10px 6px;color:#f4f0e8;font-weight:600;">555</td><td style="text-align:right;padding:10px 6px;color:#f4f0e8;font-weight:600;">548</td><td style="text-align:right;padding:10px 6px;color:#f4f0e8;font-weight:600;">560</td><td style="text-align:right;padding:10px 6px;color:#f4f0e8;font-weight:600;">540</td><td style="text-align:right;padding:10px 6px;color:#f4f0e8;font-weight:600;">565</td><td style="text-align:right;padding:10px 12px;color:#c9ad7e;font-weight:700;font-size:.82rem;">6 633</td></tr><tr style="border-bottom:1px solid rgba(255,255,255,.05);"><td style="padding:9px 12px;color:rgba(244,240,232,.4);font-family:var(--mono);font-size:.68rem;white-space:nowrap;">Taux d'occupation réel</td><td style="text-align:right;padding:9px 6px;color:#c9ad7e;font-weight:600;">95%</td><td style="text-align:right;padding:9px 6px;color:#557b79;">93%</td><td style="text-align:right;padding:9px 6px;color:#557b79;">94%</td><td style="text-align:right;padding:9px 6px;color:#557b79;">93%</td><td style="text-align:right;padding:9px 6px;color:#557b79;">92%</td><td style="text-align:right;padding:9px 6px;color:#557b79;">90%</td><td style="text-align:right;padding:9px 6px;color:#9a5947;">81%</td><td style="text-align:right;padding:9px 6px;color:#557b79;">90%</td><td style="text-align:right;padding:9px 6px;color:#557b79;">91%</td><td style="text-align:right;padding:9px 6px;color:#557b79;">90%</td><td style="text-align:right;padding:9px 6px;color:#557b79;">90%</td><td style="text-align:right;padding:9px 6px;color:#557b79;">91%</td><td style="text-align:right;padding:9px 12px;color:#557b79;font-weight:700;">90,9%</td></tr><tr style="border-bottom:1px solid rgba(255,255,255,.05);"><td style="padding:9px 12px;color:rgba(244,240,232,.4);font-family:var(--mono);font-size:.68rem;white-space:nowrap;">Écart réel / prévu</td><td style="text-align:right;padding:9px 6px;color:#9a5947;">-5</td><td style="text-align:right;padding:9px 6px;color:#9a5947;">-18</td><td style="text-align:right;padding:9px 6px;color:#9a5947;">-10</td><td style="text-align:right;padding:9px 6px;color:#9a5947;">-16</td><td style="text-align:right;padding:9px 6px;color:#9a5947;">-25</td><td style="text-align:right;padding:9px 6px;color:#9a5947;">-36</td><td style="text-align:right;padding:9px 6px;color:#9a5947;">-95</td><td style="text-align:right;padding:9px 6px;color:#9a5947;">-40</td><td style="text-align:right;padding:9px 6px;color:#9a5947;">-28</td><td style="text-align:right;padding:9px 6px;color:#9a5947;">-35</td><td style="text-align:right;padding:9px 6px;color:#9a5947;">-36</td><td style="text-align:right;padding:9px 6px;color:#9a5947;">-30</td><td style="text-align:right;padding:9px 12px;color:#9a5947;font-weight:700;">-374</td></tr><tr style="background:rgba(169,132,82,.09);border-top:1px solid rgba(169,132,82,.2);"><td style="padding:11px 12px;color:#c9ad7e;font-weight:600;font-family:var(--mono);font-size:.68rem;white-space:nowrap;">Facturation mensuelle</td><td style="text-align:right;padding:11px 6px;color:rgba(244,240,232,.62);font-size:.71rem;white-space:nowrap;">123 900 €</td><td style="text-align:right;padding:11px 6px;color:rgba(244,240,232,.62);font-size:.71rem;white-space:nowrap;">109 200 €</td><td style="text-align:right;padding:11px 6px;color:rgba(244,240,232,.62);font-size:.71rem;white-space:nowrap;">122 850 €</td><td style="text-align:right;padding:11px 6px;color:rgba(244,240,232,.62);font-size:.71rem;white-space:nowrap;">117 600 €</td><td style="text-align:right;padding:11px 6px;color:rgba(244,240,232,.62);font-size:.71rem;white-space:nowrap;">119 700 €</td><td style="text-align:right;padding:11px 6px;color:rgba(244,240,232,.62);font-size:.71rem;white-space:nowrap;">113 400 €</td><td style="text-align:right;padding:11px 6px;color:rgba(244,240,232,.62);font-size:.71rem;white-space:nowrap;">105 000 €</td><td style="text-align:right;padding:11px 6px;color:rgba(244,240,232,.62);font-size:.71rem;white-space:nowrap;">116 550 €</td><td style="text-align:right;padding:11px 6px;color:rgba(244,240,232,.62);font-size:.71rem;white-space:nowrap;">115 080 €</td><td style="text-align:right;padding:11px 6px;color:rgba(244,240,232,.62);font-size:.71rem;white-space:nowrap;">117 600 €</td><td style="text-align:right;padding:11px 6px;color:rgba(244,240,232,.62);font-size:.71rem;white-space:nowrap;">113 400 €</td><td style="text-align:right;padding:11px 6px;color:rgba(244,240,232,.62);font-size:.71rem;white-space:nowrap;">118 650 €</td><td style="text-align:right;padding:11px 12px;color:#c9ad7e;font-weight:700;font-size:.8rem;white-space:nowrap;">1 392 930 €</td></tr></tbody></table></div></div></div>
+            <div class="visual-caption">Tableau de restitution mensuel : activité et facturation, avec des données fictives.</div>
+            <div class="pill-row" style="margin-top:28px;"><span class="pill">Google Sheets</span><span class="pill">Apps Script</span><span class="pill">Looker Studio</span><span class="pill">Contrôle qualité</span></div>
+          </div>
+        </article>
+
+        <article class="case-article">
+          <div>
+            <div class="case-num">02</div>
+            <div class="case-domain">Optimisation de process<br>Évaluation externe</div>
+          </div>
+          <div class="case-content">
+            <h3>Préparer les visites d'évaluation de la Haute Autorité de santé (13 structures)</h3>
+            <div class="case-block"><div class="case-block-label">Problème</div><p>Chaque structure avait son programme de visite dans un document distinct. Qui mobiliser, quelle salle réserver, qui prévenir : tout se suivait à la main, avec un risque de conflit sur l'agenda partagé.</p></div>
+            <div class="case-block"><div class="case-block-label">Action</div><p>J'ai consolidé les 13 programmes dans une base unique de près de 300 lignes, puis automatisé la réservation des salles, l'envoi des invitations et les rappels de la veille, avec des verrous contre les doublons.</p></div>
+            <div class="case-result"><div class="result-label">Résultat</div><p>Une seule base fait foi et alimente agenda, invitations et tableau d'avancement. Les conflits de salles, dont un déjà présent dans l'agenda, ont été repérés à la préparation plutôt que la veille. Les scripts ont été testés en simulation avant leur mise en service.</p></div>
+            <div class="pill-row" style="margin-top:28px;"><span class="pill">Apps Script</span><span class="pill">Google Agenda</span><span class="pill">Automatisation</span><span class="pill">Pilotage de projet</span></div>
+          </div>
+        </article>
+
+        <article class="case-article">
+          <div>
+            <div class="case-num">03</div>
+            <div class="case-domain">Data analyse<br>Modélisation de données</div>
+          </div>
+          <div class="case-content">
+            <h3>Un référentiel unique de l'organisation : services, établissements, sites</h3>
+            <div class="case-block"><div class="case-block-label">Problème</div><p>Les informations de structure (services, numéros d'identification des établissements, directeurs, codes analytiques, sites) vivaient dans plusieurs fichiers. La moindre question demandait un recoupement manuel.</p></div>
+            <div class="case-block"><div class="case-block-label">Action</div><p>J'ai modélisé une base relationnelle de 10 tables couvrant 42 services, 15 établissements médico-sociaux, 50 sites et 95 codes analytiques (comptabilité), avec un niveau de fiabilité sur chaque lien et un script qui vérifie l'intégrité.</p></div>
+            <div class="case-result"><div class="result-label">Résultat</div><p>Les incohérences (codes orphelins, numéro invalide, doublons) sont détectées et classées avant d'être utilisées. Le référentiel sert de socle commun aux tableaux de bord et aux outils de suivi.</p></div>
+            <div class="pill-row" style="margin-top:28px;"><span class="pill">Modèle relationnel</span><span class="pill">SQL</span><span class="pill">Apps Script</span><span class="pill">Qualité des données</span></div>
+          </div>
+        </article>
+
+        <article class="case-article">
+          <div>
+            <div class="case-num">04</div>
+            <div class="case-domain">Analyse territoriale<br>Master 2 recherche</div>
+          </div>
+          <div class="case-content">
+            <h3>Diagnostic territorial : dynamiques des centres-bourgs du Pays Cœur d'Hérault</h3>
+            <div class="case-block"><div class="case-block-label">Problème</div><p>Un territoire de 77 communes subissait à la fois désindustrialisation, métropolisation et paupérisation. Élus et techniciens en avaient une perception, mais pas de lecture structurée et documentée.</p></div>
+            <div class="case-block"><div class="case-block-label">Action</div><p>J'ai croisé les données INSEE, une analyse factorielle des correspondances, des cartographies originales sous QGIS, un questionnaire auprès des ménages de trois bourgs-centres et des entretiens avec les acteurs institutionnels.</p></div>
+            <div class="case-result"><div class="result-label">Résultat</div><p>Un diagnostic complet, de la donnée brute à la recommandation opérationnelle. La démarche est réutilisable sur d'autres territoires insulaires ou ruraux fragiles.</p></div>
+            
+            <div class="case-visual">
+            <div style="font-family:var(--mono); font-size:.62rem; letter-spacing:.1em; text-transform:uppercase; color:rgba(201,173,126,.7); margin-bottom:22px;">Analyse territoriale · SIG · Méthodes multivariées</div>
+            <div style="display:flex; flex-direction:column; gap:14px; width:100%;">
+              <div style="background:rgba(85,123,121,.18); border:1px solid rgba(85,123,121,.35); border-radius:14px; padding:18px;">
+                <div style="font-family:Georgia,serif; color:#f4f0e8; font-size:1rem; margin-bottom:7px;">Cartographie thématique</div>
+                <div style="font-size:.82rem; color:rgba(244,240,232,.62); line-height:1.55;">Production originale sous QGIS et ArcGIS : dynamiques démographiques, taux de chômage, RSA, logements vacants, tache urbaine sur 77 communes.</div>
+              </div>
+              <div style="background:rgba(169,132,82,.14); border:1px solid rgba(169,132,82,.32); border-radius:14px; padding:18px;">
+                <div style="font-family:Georgia,serif; color:#f4f0e8; font-size:1rem; margin-bottom:7px;">Analyse factorielle (AFC)</div>
+                <div style="font-size:.82rem; color:rgba(244,240,232,.62); line-height:1.55;">Facteur 1 : 52,7% de l'information. Facteur 2 : 19,5%. Résultats cartographiés commune par commune pour rendre la structure lisible.</div>
+              </div>
+              <div style="background:rgba(255,255,255,.055); border:1px solid rgba(255,255,255,.1); border-radius:14px; padding:18px;">
+                <div style="font-family:Georgia,serif; color:#f4f0e8; font-size:1rem; margin-bottom:7px;">Enquête terrain & entretiens</div>
+                <div style="font-size:.82rem; color:rgba(244,240,232,.62); line-height:1.55;">Questionnaire ménages dans les 3 bourgs-centres. Entretiens : directeur du schéma de cohérence territoriale (SCoT), urbaniste, spécialiste patrimoine.</div>
+              </div>
+            </div></div>
+            <div class="visual-caption">Extraits du diagnostic : cartographies, analyse factorielle et enquête de terrain.</div>
+            <div class="pill-row" style="margin-top:28px;"><span class="pill">AFC</span><span class="pill">QGIS</span><span class="pill">INSEE</span><span class="pill">Enquête ménages</span></div>
+          </div>
+        </article>
+      </div>
+
+      <div class="section-label" style="margin-top:72px;">Autres réalisations</div>
+      <div class="other-grid">
+        <div class="other"><h3>Conformité NIS2 et RGPD</h3><p>Note stratégique pour une association qui gère des données très sensibles (mineurs, santé, justice) : risques juridiques et techniques analysés au regard de NIS2 (directive européenne de cybersécurité) et du RGPD.</p></div>
+        <div class="other"><h3>Planning collectif et variables de paie</h3><p>Application web (Apps Script) : prévu et réalisé, semaine gelée à la validation, heures supplémentaires calculées selon la convention collective, export des variables de paie.</p></div>
+        <div class="other"><h3>41 délégations de pouvoirs en publipostage</h3><p>Génération de 41 documents PDF individualisés depuis un classeur unique. Les corrections se font à la source, pas document par document.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MÉTHODES & COMPÉTENCES -->
+  <section id="competences" style="background:var(--paper-2);">
+    <div class="inner">
+      <div class="section-label">02 · Compétences</div>
+      <h2>Le profil technique</h2>
+      <p class="section-intro">Des outils et des méthodes au service d'une seule question : comment rendre la donnée suffisamment fiable et lisible pour qu'elle serve vraiment la décision ?</p>
+
+      <div class="method-grid">
+        <div class="method"><div class="icon">∿</div><h3>Qualité des données</h3><p>Détection des incohérences, doublons, champs obligatoires, règles métier et traçabilité des corrections à la source.</p></div>
+        <div class="method"><div class="icon">◈</div><h3>Architecture reporting</h3><p>Structuration de bases de collecte, bases intermédiaires, flux de consolidation et publication décisionnelle multi-niveaux.</p></div>
+        <div class="method"><div class="icon">⊕</div><h3>Analyse territoriale</h3><p>Lecture spatiale, données publiques INSEE, cartographie thématique, diagnostic territorial et méthodes mixtes.</p></div>
+        <div class="method"><div class="icon">⟳</div><h3>Automatisation</h3><p>Apps Script pour automatiser les flux, contrôler la qualité, historiser et réduire les opérations manuelles répétitives.</p></div>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-col">
+          <div class="skill-col-title">Données & Reporting</div>
+          <div class="skill-item"><span>Pilotage de la performance</span></div>
+          <div class="skill-item"><span>Google Sheets</span></div>
+          <div class="skill-item"><span>Looker Studio</span></div>
+          <div class="skill-item"><span>Excel</span></div>
+          <div class="skill-item"><span>Apps Script</span></div>
+        </div>
+        <div class="skill-col">
+          <div class="skill-col-title">Analyse & Méthodes</div>
+          <div class="skill-item"><span>Statistiques multivariées</span></div>
+          <div class="skill-item"><span>AFC / ACP (analyses factorielles)</span></div>
+          <div class="skill-item"><span>Statistiques descriptives</span></div>
+          <div class="skill-item"><span>R (en apprentissage)</span></div>
+          <div class="skill-item"><span>Contrôle qualité données</span></div>
+        </div>
+        <div class="skill-col">
+          <div class="skill-col-title">Cartographie & SIG</div>
+          <div class="skill-item"><span>QGIS</span></div>
+          <div class="skill-item"><span>ArcGIS</span></div>
+          <div class="skill-item"><span>Analyse territoriale</span></div>
+          <div class="skill-item"><span>Données publiques INSEE</span></div>
+        </div>
+        <div class="skill-col">
+          <div class="skill-col-title">Gouvernance & Pilotage</div>
+          <div class="skill-item"><span>Architecture reporting</span></div>
+          <div class="skill-item"><span>Appui à la direction</span></div>
+          <div class="skill-item"><span>Gouvernance SI / RGPD</span></div>
+          <div class="skill-item"><span>Rédaction institutionnelle</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARCOURS -->
+  <section id="parcours">
+    <div class="inner">
+      <div class="section-label">03 · Parcours</div>
+      <h2>Expériences et formation</h2>
+      <p class="section-intro">Un parcours construit à l'interface de la géographie, du médico-social, de la donnée opérationnelle et de l'appui à la décision publique.</p>
+
+      <div class="sub-label">Expériences</div>
+      <div class="timeline" style="margin-top:22px;">
+<div class="time-card current"><div class="date">Oct. 2024 · en cours</div><h3>Chargé d'appui au pilotage et à la performance</h3><div class="sub">Prestataire · Association médico-sociale multi-établissements, Mayotte (télétravail depuis La Réunion)</div><p>Pilotage intégré de l'activité de 50 structures, contrôle qualité automatisé, optimisation des process (réservations, délégations, planning et paie), appui à la direction générale, fiabilisation des données de facturation.</p></div><div class="time-card"><div class="date">Mars 2023 · Sept. 2024</div><h3>Assistant de direction · Librairie</h3><div class="sub">Mayotte</div><p>Première expérience de pilotage par la donnée : suivi de caisse, stocks et indicateurs de vente.</p></div><div class="time-card"><div class="date">Jan. 2022 · Jan. 2023</div><h3>Professeur contractuel d'histoire-géographie</h3><div class="sub">Lycée de Chirongui, Mayotte</div><p>Expliquer des sources et des données complexes à des publics variés.</p></div>
+      </div>
+
+      <div class="sub-label" style="margin-top:56px;">Formation</div>
+      <div class="timeline" style="margin-top:22px;">
+<div class="time-card"><div class="date">2019 · 2021</div><h3>Doctorat en géographie et aménagement (non soutenu)</h3><div class="sub">Transition énergétique et innovation territoriale (Occitanie)</div><p>Recherche-action de terrain : conduite d'enquêtes, méthodes quantitatives et qualitatives. Arrêt en 2021 (COVID-19).</p></div><div class="time-card"><div class="date">2017 · 2019</div><h3>Master GTDL · Université Paul-Valéry Montpellier 3</h3><div class="sub">Gestion des territoires et développement local</div><p>Diagnostic territorial (AFC, SIG, enquête ménages). Stages : PTCE 3.EVA (Haute Vallée de l'Aude), EIFER (Karlsruhe).</p></div><div class="time-card"><div class="date">2013 · 2016</div><h3>Licence Géographie et Aménagement</h3><div class="sub">Université de Nantes</div><p></p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARCHITECTURE -->
+  <section id="architecture" style="background:var(--paper-2);">
+    <div class="inner">
+      <div class="section-label">04 · Méthode</div>
+      <h2>Comment la donnée<br>devient fiable</h2>
+
+      <p class="doctrine" style="margin-top:28px;">Ma méthode vient de la géographie : décrire avant d'interpréter, lire un système avant d'en isoler les composantes. Dans un audit ou un outil de reporting, cette lenteur méthodique conditionne la qualité des décisions qui suivent.</p>
+
+      <div class="hero-chain" style="margin-top:44px; margin-bottom:44px;">
         <div class="chain-step">
           <div class="chain-step-num">01</div>
           <div class="chain-step-label">Collecte</div>
@@ -385,185 +625,10 @@
         <div class="chain-step">
           <div class="chain-step-num">05</div>
           <div class="chain-step-label">Restitution</div>
-          <div class="chain-step-desc">Looker Studio, rapports annuels, appui à la décision DG/DGA.</div>
+          <div class="chain-step-desc">Looker Studio, rapports annuels, appui à la décision de la direction générale.</div>
         </div>
       </div>
-    </div>
-  </header>
 
-  <!-- PRODUCTIONS -->
-  <section id="productions">
-    <div class="inner">
-      <div class="section-label">01 · Productions</div>
-      <h2>Objets de preuve</h2>
-      <p class="section-intro">Des livrables produits dans des contextes opérationnels réels : dashboards, contrôles qualité, tableaux de restitution. Chaque production documente une étape de la chaîne : qualifier la donnée, la consolider, la rendre lisible pour ceux qui décident.</p>
-
-      <div class="prod-grid">
-
-        <!-- Dashboard type -->
-        <div class="prod-card">
-          <div class="prod-visual" style="background:#1e2321; flex-direction:column; min-height:360px;">
-            <div style="font-family:var(--mono); font-size:.62rem; letter-spacing:.1em; text-transform:uppercase; color:rgba(201,173,126,.7); margin-bottom:18px;">Reporting type · Contrôle qualité · Looker Studio</div>
-            <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-bottom:14px; width:100%;">
-              <div style="background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); border-radius:12px; padding:14px;">
-                <div style="font-family:Georgia,serif; font-size:1.6rem; color:#c9ad7e; line-height:1;">140</div>
-                <div style="font-size:.7rem; color:rgba(244,240,232,.5); margin-top:6px;">Adultes</div>
-              </div>
-              <div style="background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); border-radius:12px; padding:14px;">
-                <div style="font-family:Georgia,serif; font-size:1.6rem; color:#c9ad7e; line-height:1;">31</div>
-                <div style="font-size:.7rem; color:rgba(244,240,232,.5); margin-top:6px;">Enfants</div>
-              </div>
-              <div style="background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); border-radius:12px; padding:14px;">
-                <div style="font-family:Georgia,serif; font-size:1.6rem; color:#c9ad7e; line-height:1;">370,6</div>
-                <div style="font-size:.7rem; color:rgba(244,240,232,.5); margin-top:6px;">Nuitées / ménage</div>
-              </div>
-              <div style="background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); border-radius:12px; padding:14px;">
-                <div style="font-family:Georgia,serif; font-size:1.6rem; color:#c9ad7e; line-height:1;">58 561</div>
-                <div style="font-size:.7rem; color:rgba(244,240,232,.5); margin-top:6px;">Nuitées totales</div>
-              </div>
-            </div>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; width:100%;">
-              <div style="background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); border-radius:12px; padding:14px; display:flex; gap:14px; align-items:center;">
-                <svg width="76" height="76" viewBox="0 0 80 80" style="flex-shrink:0;">
-                  <circle cx="40" cy="40" r="30" fill="none" stroke="#557b79" stroke-width="14" stroke-dasharray="143.5 43.8" transform="rotate(-90 40 40)"/>
-                  <circle cx="40" cy="40" r="30" fill="none" stroke="#a98452" stroke-width="14" stroke-dasharray="40.3 147" stroke-dashoffset="-143.5" transform="rotate(-90 40 40)"/>
-                  <circle cx="40" cy="40" r="30" fill="none" stroke="#9a5947" stroke-width="14" stroke-dasharray="3.6 183.7" stroke-dashoffset="-183.8" transform="rotate(-90 40 40)"/>
-                  <text x="40" y="44" text-anchor="middle" fill="#f4f0e8" font-size="11" font-family="Georgia,serif">76,6%</text>
-                </svg>
-                <div>
-                  <div style="font-size:.63rem; color:rgba(244,240,232,.45); text-transform:uppercase; letter-spacing:.08em; margin-bottom:8px;">Statut qualité</div>
-                  <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;"><span style="width:8px;height:8px;border-radius:50%;background:#557b79;display:inline-block;flex-shrink:0;"></span><span style="font-size:.74rem;color:rgba(244,240,232,.8);">OK : 76,6%</span></div>
-                  <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;"><span style="width:8px;height:8px;border-radius:50%;background:#a98452;display:inline-block;flex-shrink:0;"></span><span style="font-size:.74rem;color:rgba(244,240,232,.8);">Erreurs : 21,5%</span></div>
-                  <div style="display:flex;align-items:center;gap:6px;"><span style="width:8px;height:8px;border-radius:50%;background:#9a5947;display:inline-block;flex-shrink:0;"></span><span style="font-size:.74rem;color:rgba(244,240,232,.8);">Doublons : 1,9%</span></div>
-                </div>
-              </div>
-              <div style="background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); border-radius:12px; padding:14px;">
-                <div style="font-size:.63rem; color:rgba(244,240,232,.45); text-transform:uppercase; letter-spacing:.08em; margin-bottom:10px;">Erreurs détectées</div>
-                <div style="font-size:.74rem; color:rgba(244,240,232,.75); margin-bottom:6px; display:flex; justify-content:space-between;"><span>Type ménage incohérent</span><span style="color:#c9ad7e;">5</span></div>
-                <div style="font-size:.74rem; color:rgba(244,240,232,.75); margin-bottom:6px; display:flex; justify-content:space-between;"><span>Sortie / statut incohérents</span><span style="color:#c9ad7e;">5</span></div>
-                <div style="font-size:.74rem; color:rgba(244,240,232,.75); margin-bottom:6px; display:flex; justify-content:space-between;"><span>Champs obligatoires manquants</span><span style="color:#c9ad7e;">4</span></div>
-                <div style="font-size:.74rem; color:rgba(244,240,232,.75); margin-bottom:6px; display:flex; justify-content:space-between;"><span>Date de validité manquante</span><span style="color:#c9ad7e;">3</span></div>
-                <div style="font-size:.74rem; color:rgba(244,240,232,.75); display:flex; justify-content:space-between;"><span>Doublon détecté</span><span style="color:#c9ad7e;">3</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="prod-body">
-            <div class="prod-tag">Dashboard · Contrôle qualité · Hébergement d'urgence</div>
-            <h3>Reporting opérationnel avec contrôle qualité intégré</h3>
-            <p>La question posée au départ n'était pas "que se passe-t-il dans le dispositif ?" mais "peut-on faire confiance aux données pour le savoir ?" Le tableau de bord commence par qualifier la donnée avant de l'analyser : 76,6% de données conformes sur la première itération, le reste identifié, localisé, attribuable.</p>
-            <p>Le système distingue les données exploitables, les doublons et les erreurs métier, avec lecture par service et par personne contributrice. Ce n'est pas de la surveillance : c'est ce qui rend l'analyse honnête.</p>
-            <div class="pill-row"><span class="pill">Looker Studio</span><span class="pill">Apps Script</span><span class="pill">Contrôle qualité</span><span class="pill">Hébergement d'urgence</span></div>
-          </div>
-        </div>
-
-        <!-- Analyse territoriale -->
-        <div class="prod-card">
-          <div class="prod-visual" style="background:var(--ink); flex-direction:column; align-items:flex-start; min-height:360px;">
-            <div style="font-family:var(--mono); font-size:.62rem; letter-spacing:.1em; text-transform:uppercase; color:rgba(201,173,126,.7); margin-bottom:22px;">Analyse territoriale · SIG · Méthodes multivariées</div>
-            <div style="display:flex; flex-direction:column; gap:14px; width:100%;">
-              <div style="background:rgba(85,123,121,.18); border:1px solid rgba(85,123,121,.35); border-radius:14px; padding:18px;">
-                <div style="font-family:Georgia,serif; color:#f4f0e8; font-size:1rem; margin-bottom:7px;">Cartographie thématique</div>
-                <div style="font-size:.82rem; color:rgba(244,240,232,.62); line-height:1.55;">Production originale sous QGIS et ArcGIS : dynamiques démographiques, taux de chômage, RSA, logements vacants, tache urbaine sur 77 communes.</div>
-              </div>
-              <div style="background:rgba(169,132,82,.14); border:1px solid rgba(169,132,82,.32); border-radius:14px; padding:18px;">
-                <div style="font-family:Georgia,serif; color:#f4f0e8; font-size:1rem; margin-bottom:7px;">Analyse factorielle (AFC)</div>
-                <div style="font-size:.82rem; color:rgba(244,240,232,.62); line-height:1.55;">Facteur 1 : 52,7% de l'information. Facteur 2 : 19,5%. Résultats cartographiés commune par commune pour rendre la structure lisible.</div>
-              </div>
-              <div style="background:rgba(255,255,255,.055); border:1px solid rgba(255,255,255,.1); border-radius:14px; padding:18px;">
-                <div style="font-family:Georgia,serif; color:#f4f0e8; font-size:1rem; margin-bottom:7px;">Enquête terrain & entretiens</div>
-                <div style="font-size:.82rem; color:rgba(244,240,232,.62); line-height:1.55;">Questionnaire ménages dans les 3 bourgs-centres. Entretiens : directeur du SCoT, urbaniste, spécialiste patrimoine.</div>
-              </div>
-            </div>
-          </div>
-          <div class="prod-body">
-            <div class="prod-tag">Cartographie · Diagnostic territorial · M2 GTDL</div>
-            <h3>Dynamiques de centres-bourgs : Pays Cœur d'Hérault</h3>
-            <p>Un territoire de 77 communes traversé par des dynamiques simultanées de désindustrialisation, de métropolisation et de paupérisation. La donnée seule ne suffit pas à rendre ces phénomènes lisibles : il faut les croiser, les spatialiser, les confronter à ce que disent les acteurs sur le terrain.</p>
-            <p>Ce diagnostic articule méthodes quantitatives, cartographies originales et enquête de terrain pour produire une lecture structurée d'un territoire de projet.</p>
-            <div class="pill-row"><span class="pill">QGIS</span><span class="pill">ArcGIS</span><span class="pill">AFC</span><span class="pill">INSEE</span><span class="pill">Espaces ruraux</span></div>
-          </div>
-        </div>
-
-        <!-- Tableau restitution DG -->
-        <div class="prod-card full">
-          <div class="prod-visual" style="background:#1e2321; align-items:flex-start; min-height:auto; overflow-x:auto; padding:26px;">
-            <div style="width:100%; min-width:860px;">
-              <div style="font-family:var(--mono); font-size:.62rem; letter-spacing:.1em; text-transform:uppercase; color:rgba(201,173,126,.7); margin-bottom:18px;">
-                ESMS · Suivi d'activité et facturation · Exercice N
-                <span style="margin-left:16px; color:rgba(244,240,232,.28);">238,57 €/jour · 20 places · Prévisionnel 96%</span>
-              </div>
-              <table style="width:100%; border-collapse:collapse; font-size:.76rem;">
-                <thead>
-                  <tr>
-                    <th style="text-align:left;font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(201,173,126,.8);padding:8px 12px;border-bottom:1px solid rgba(255,255,255,.12);white-space:nowrap;">Indicateur</th>
-                    <th style="text-align:right;font-family:var(--mono);font-size:.6rem;color:rgba(244,240,232,.38);padding:8px 6px;border-bottom:1px solid rgba(255,255,255,.12);">Jan.</th>
-                    <th style="text-align:right;font-family:var(--mono);font-size:.6rem;color:rgba(244,240,232,.38);padding:8px 6px;border-bottom:1px solid rgba(255,255,255,.12);">Fév.</th>
-                    <th style="text-align:right;font-family:var(--mono);font-size:.6rem;color:rgba(244,240,232,.38);padding:8px 6px;border-bottom:1px solid rgba(255,255,255,.12);">Mar.</th>
-                    <th style="text-align:right;font-family:var(--mono);font-size:.6rem;color:rgba(244,240,232,.38);padding:8px 6px;border-bottom:1px solid rgba(255,255,255,.12);">Avr.</th>
-                    <th style="text-align:right;font-family:var(--mono);font-size:.6rem;color:rgba(244,240,232,.38);padding:8px 6px;border-bottom:1px solid rgba(255,255,255,.12);">Mai</th>
-                    <th style="text-align:right;font-family:var(--mono);font-size:.6rem;color:rgba(244,240,232,.38);padding:8px 6px;border-bottom:1px solid rgba(255,255,255,.12);">Jun.</th>
-                    <th style="text-align:right;font-family:var(--mono);font-size:.6rem;color:rgba(244,240,232,.38);padding:8px 6px;border-bottom:1px solid rgba(255,255,255,.12);">Jul.</th>
-                    <th style="text-align:right;font-family:var(--mono);font-size:.6rem;color:rgba(244,240,232,.38);padding:8px 6px;border-bottom:1px solid rgba(255,255,255,.12);">Aoû.</th>
-                    <th style="text-align:right;font-family:var(--mono);font-size:.6rem;color:rgba(244,240,232,.38);padding:8px 6px;border-bottom:1px solid rgba(255,255,255,.12);">Sep.</th>
-                    <th style="text-align:right;font-family:var(--mono);font-size:.6rem;color:rgba(244,240,232,.38);padding:8px 6px;border-bottom:1px solid rgba(255,255,255,.12);">Oct.</th>
-                    <th style="text-align:right;font-family:var(--mono);font-size:.6rem;color:rgba(244,240,232,.38);padding:8px 6px;border-bottom:1px solid rgba(255,255,255,.12);">Nov.</th>
-                    <th style="text-align:right;font-family:var(--mono);font-size:.6rem;color:rgba(244,240,232,.38);padding:8px 6px;border-bottom:1px solid rgba(255,255,255,.12);">Déc.</th>
-                    <th style="text-align:right;font-family:var(--mono);font-size:.6rem;color:rgba(201,173,126,.8);padding:8px 12px;border-bottom:1px solid rgba(255,255,255,.12);">TOTAL</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr style="border-bottom:1px solid rgba(255,255,255,.05);">
-                    <td style="padding:9px 12px;color:rgba(244,240,232,.4);font-family:var(--mono);font-size:.68rem;white-space:nowrap;">Volume théorique</td>
-                    <td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.32);">620</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.32);">560</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.32);">620</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.32);">600</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.32);">620</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.32);">600</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.32);">620</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.32);">620</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.32);">600</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.32);">620</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.32);">600</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.32);">620</td>
-                    <td style="text-align:right;padding:9px 12px;color:rgba(244,240,232,.38);font-weight:600;">7 300</td>
-                  </tr>
-                  <tr style="border-bottom:1px solid rgba(255,255,255,.05);">
-                    <td style="padding:9px 12px;color:rgba(244,240,232,.4);font-family:var(--mono);font-size:.68rem;white-space:nowrap;">Volume prévisionnel</td>
-                    <td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.48);">595</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.48);">538</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.48);">595</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.48);">576</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.48);">595</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.48);">576</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.48);">595</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.48);">595</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.48);">576</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.48);">595</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.48);">576</td><td style="text-align:right;padding:9px 6px;color:rgba(244,240,232,.48);">595</td>
-                    <td style="text-align:right;padding:9px 12px;color:rgba(244,240,232,.52);font-weight:600;">7 008</td>
-                  </tr>
-                  <tr style="background:rgba(85,123,121,.08); border-bottom:1px solid rgba(85,123,121,.18);">
-                    <td style="padding:10px 12px;color:#c9ad7e;font-family:var(--mono);font-size:.68rem;font-weight:600;white-space:nowrap;">Volume réel mensuel</td>
-                    <td style="text-align:right;padding:10px 6px;color:#f4f0e8;font-weight:600;">576</td><td style="text-align:right;padding:10px 6px;color:#f4f0e8;font-weight:600;">502</td><td style="text-align:right;padding:10px 6px;color:#f4f0e8;font-weight:600;">599</td><td style="text-align:right;padding:10px 6px;color:#f4f0e8;font-weight:600;">545</td><td style="text-align:right;padding:10px 6px;color:#f4f0e8;font-weight:600;">564</td><td style="text-align:right;padding:10px 6px;color:#f4f0e8;font-weight:600;">521</td><td style="text-align:right;padding:10px 6px;color:#f4f0e8;font-weight:600;">499</td><td style="text-align:right;padding:10px 6px;color:#f4f0e8;font-weight:600;">537</td><td style="text-align:right;padding:10px 6px;color:#f4f0e8;font-weight:600;">533</td><td style="text-align:right;padding:10px 6px;color:#f4f0e8;font-weight:600;">527</td><td style="text-align:right;padding:10px 6px;color:#f4f0e8;font-weight:600;">516</td><td style="text-align:right;padding:10px 6px;color:#f4f0e8;font-weight:600;">532</td>
-                    <td style="text-align:right;padding:10px 12px;color:#c9ad7e;font-weight:700;font-size:.82rem;">6 451</td>
-                  </tr>
-                  <tr style="border-bottom:1px solid rgba(255,255,255,.05);">
-                    <td style="padding:9px 12px;color:rgba(244,240,232,.4);font-family:var(--mono);font-size:.68rem;white-space:nowrap;">Taux d'occupation réel</td>
-                    <td style="text-align:right;padding:9px 6px;color:#557b79;">93%</td><td style="text-align:right;padding:9px 6px;color:#557b79;">90%</td><td style="text-align:right;padding:9px 6px;color:#c9ad7e;font-weight:600;">97%</td><td style="text-align:right;padding:9px 6px;color:#557b79;">91%</td><td style="text-align:right;padding:9px 6px;color:#557b79;">91%</td><td style="text-align:right;padding:9px 6px;color:#557b79;">87%</td><td style="text-align:right;padding:9px 6px;color:#9a5947;">80%</td><td style="text-align:right;padding:9px 6px;color:#557b79;">87%</td><td style="text-align:right;padding:9px 6px;color:#557b79;">89%</td><td style="text-align:right;padding:9px 6px;color:#557b79;">85%</td><td style="text-align:right;padding:9px 6px;color:#557b79;">86%</td><td style="text-align:right;padding:9px 6px;color:#557b79;">86%</td>
-                    <td style="text-align:right;padding:9px 12px;color:#557b79;font-weight:700;">88,4%</td>
-                  </tr>
-                  <tr style="border-bottom:1px solid rgba(255,255,255,.05);">
-                    <td style="padding:9px 12px;color:rgba(244,240,232,.4);font-family:var(--mono);font-size:.68rem;white-space:nowrap;">Écart réel / prévu</td>
-                    <td style="text-align:right;padding:9px 6px;color:#9a5947;">-19</td><td style="text-align:right;padding:9px 6px;color:#9a5947;">-36</td><td style="text-align:right;padding:9px 6px;color:#557b79;">+4</td><td style="text-align:right;padding:9px 6px;color:#9a5947;">-31</td><td style="text-align:right;padding:9px 6px;color:#9a5947;">-31</td><td style="text-align:right;padding:9px 6px;color:#9a5947;">-55</td><td style="text-align:right;padding:9px 6px;color:#9a5947;">-96</td><td style="text-align:right;padding:9px 6px;color:#9a5947;">-58</td><td style="text-align:right;padding:9px 6px;color:#9a5947;">-43</td><td style="text-align:right;padding:9px 6px;color:#9a5947;">-68</td><td style="text-align:right;padding:9px 6px;color:#9a5947;">-60</td><td style="text-align:right;padding:9px 6px;color:#9a5947;">-63</td>
-                    <td style="text-align:right;padding:9px 12px;color:#9a5947;font-weight:700;">-557</td>
-                  </tr>
-                  <tr style="background:rgba(169,132,82,.09); border-top:1px solid rgba(169,132,82,.2);">
-                    <td style="padding:11px 12px;color:#c9ad7e;font-family:var(--mono);font-size:.68rem;font-weight:600;white-space:nowrap;">Facturation mensuelle</td>
-                    <td style="text-align:right;padding:11px 6px;color:rgba(244,240,232,.62);font-size:.71rem;">137 416 €</td><td style="text-align:right;padding:11px 6px;color:rgba(244,240,232,.62);font-size:.71rem;">119 762 €</td><td style="text-align:right;padding:11px 6px;color:rgba(244,240,232,.62);font-size:.71rem;">142 903 €</td><td style="text-align:right;padding:11px 6px;color:rgba(244,240,232,.62);font-size:.71rem;">130 021 €</td><td style="text-align:right;padding:11px 6px;color:rgba(244,240,232,.62);font-size:.71rem;">134 553 €</td><td style="text-align:right;padding:11px 6px;color:rgba(244,240,232,.62);font-size:.71rem;">124 295 €</td><td style="text-align:right;padding:11px 6px;color:rgba(244,240,232,.62);font-size:.71rem;">119 046 €</td><td style="text-align:right;padding:11px 6px;color:rgba(244,240,232,.62);font-size:.71rem;">128 112 €</td><td style="text-align:right;padding:11px 6px;color:rgba(244,240,232,.62);font-size:.71rem;">127 158 €</td><td style="text-align:right;padding:11px 6px;color:rgba(244,240,232,.62);font-size:.71rem;">125 726 €</td><td style="text-align:right;padding:11px 6px;color:rgba(244,240,232,.62);font-size:.71rem;">123 102 €</td><td style="text-align:right;padding:11px 6px;color:rgba(244,240,232,.62);font-size:.71rem;">126 919 €</td>
-                    <td style="text-align:right;padding:11px 12px;color:#c9ad7e;font-weight:700;font-size:.8rem;">1 539 015 €</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div class="prod-body">
-            <div class="prod-tag">Excel · Pilotage direction · Facturation</div>
-            <h3>Tableau de restitution mensuel : activité et facturation</h3>
-            <p>Ce tableau est un outil de dialogue : entre la direction et ses établissements, entre l'association et ses financeurs. Il met en regard ce qui était prévu, ce qui a été réalisé, et ce qui en découle financièrement, mois par mois, sans ambiguïté.</p>
-            <p>Les écarts sont colorés pour être lus au premier regard. La facturation s'articule directement avec l'activité réelle. Le tout est conçu pour que la direction générale puisse comprendre la situation sans retraitement manuel.</p>
-            <div class="pill-row"><span class="pill">Excel</span><span class="pill">Suivi d'activité</span><span class="pill">Pilotage</span><span class="pill">Facturation</span><span class="pill">Dialogue de gestion</span></div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ARCHITECTURE -->
-  <section id="architecture" style="background:var(--paper-2);">
-    <div class="inner">
-      <div class="section-label">02 · Architecture</div>
-      <h2>Comment la donnée<br>devient fiable</h2>
 
       <p class="arch-intro">Le problème récurrent dans les organisations multi-services n'est pas l'absence de données : c'est leur dispersion, leur hétérogénéité et l'impossibilité de les agréger sans perte de sens. La réponse n'est pas d'abord technique. Elle est organisationnelle : qui produit quoi, selon quelles règles, avec quelle responsabilité, et pour qui.</p>
       <p class="arch-intro" style="margin-top:18px;">L'architecture ci-dessous matérialise cette réponse. Chaque couche a une fonction précise. La donnée ne remonte pas avant d'avoir été corrigée. Elle n'est pas analysée avant d'avoir été qualifiée. Et chaque transformation est tracée, pour qu'on sache toujours d'où vient ce qu'on lit.</p>
@@ -612,7 +677,7 @@
           <div class="arch-outputs">
             <div class="output-card">
               <div class="output-head">A · Pilotage et décision</div>
-              <div class="arch-node"><strong>Looker Studio</strong><span>Dashboards service, direction, DG/DGA ; visuels selon les droits d'accès.</span></div>
+              <div class="arch-node"><strong>Looker Studio</strong><span>Dashboards service, direction, direction générale ; visuels selon les droits d'accès.</span></div>
               <div class="mini-arrow">↓</div>
               <div class="arch-node"><strong>Rapports annuels</strong><span>Restitution institutionnelle, analyse d'activité, indicateurs consolidés.</span></div>
             </div>
@@ -629,207 +694,13 @@
             <div class="access-grid">
               <div><strong>Service</strong><span>Secrétaire + chef de service : reporting de leur périmètre.</span></div>
               <div><strong>Direction</strong><span>Vue consolidée de leur périmètre.</span></div>
-              <div><strong>DG / DGA</strong><span>Visuels stratégiques, principalement anonymisés.</span></div>
+              <div><strong>Direction générale</strong><span>Visuels stratégiques, principalement anonymisés.</span></div>
               <div><strong>Contrôle de gestion</strong><span>Accès aux bases si nécessaire.</span></div>
               <div><strong>Chargé de pilotage</strong><span>Accès transversal aux bases et flux de contrôle.</span></div>
               <div><strong>Supports</strong><span>Visuels ciblés sur demande.</span></div>
             </div>
           </div>
 
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ÉTUDES DE CAS -->
-  <section id="cas">
-    <div class="inner">
-      <div class="section-label">03 · Études de cas</div>
-      <h2>Trois réalisations,<br>une ligne de conduite.</h2>
-      <p class="section-intro">Décrire avant d'interpréter, contrôler avant de publier, restituer pour décider. Ces trois projets sont différents par leur contexte et leurs outils. La posture est la même.</p>
-
-      <div class="case-list">
-
-        <!-- CAS 01 -->
-        <article class="case-article">
-          <div>
-            <div class="case-num">01</div>
-            <div class="case-domain">Médico-social<br>Pilotage multi-services</div>
-          </div>
-          <div class="case-content">
-            <h3>Système de pilotage intégré de l'activité multi-services</h3>
-
-            <div class="case-block">
-              <div class="case-block-label">Situation</div>
-              <p>Une association médico-sociale mahoraise accompagnait plusieurs centaines de personnes à travers une dizaine de services. Chaque service tenait ses propres données, dans ses propres formats, avec ses propres conventions de saisie. Au moment de rendre compte aux financeurs (ou simplement de savoir ce qui se passait réellement), personne n'était en mesure de produire une vision consolidée fiable. Les chiffres existaient, mais ils n'étaient pas lisibles.</p>
-            </div>
-
-            <div class="case-block">
-              <div class="case-block-label">Démarche</div>
-              <p>Avant tout outil, il a fallu clarifier les responsabilités : qui produit quoi, pour qui, selon quelles règles ? La chaîne a ensuite été construite de bas en haut : d'abord les bases de collecte par service, normalisées sur un modèle commun, puis la consolidation automatisée avec traçage de l'origine de chaque donnée, puis les contrôles qualité pour détecter les incohérences avant qu'elles remontent, enfin la restitution en tableau de bord. Chaque étape a une responsabilité identifiée. Aucune n'est optionnelle.</p>
-            </div>
-
-            <div class="case-result">
-              <div class="result-label">Résultat</div>
-              <p>La direction peut désormais lire l'activité de l'association en temps réel, sans ressaisie, sans consolidation manuelle et sans douter de ce qu'elle voit. Les rapports destinés aux financeurs reposent sur les mêmes données que le pilotage quotidien : il n'y a plus deux vérités parallèles. Et lorsqu'une incohérence apparaît, elle est détectée et corrigée au plus près de sa source, pas découverte six mois plus tard lors d'un audit.</p>
-            </div>
-
-            <div class="pill-row" style="margin-top:28px;"><span class="pill">Google Sheets</span><span class="pill">Apps Script</span><span class="pill">Looker Studio</span><span class="pill">Contrôle qualité</span><span class="pill">Consolidation</span></div>
-          </div>
-        </article>
-
-        <!-- CAS 02 -->
-        <article class="case-article">
-          <div>
-            <div class="case-num">02</div>
-            <div class="case-domain">Diagnostic territorial<br>M2 Recherche</div>
-          </div>
-          <div class="case-content">
-            <h3>Dynamiques et perspectives de développement des centres-bourgs : Pays Cœur d'Hérault</h3>
-
-            <div class="case-block">
-              <div class="case-block-label">Situation</div>
-              <p>Le Pays Cœur d'Hérault est un territoire de 77 communes traversé par trois dynamiques simultanées : une désindustrialisation ancienne, une métropolisation qui aspire les actifs qualifiés vers Montpellier, et une paupérisation progressive des centres-bourgs. Les élus et techniciens du territoire avaient une perception de ces phénomènes. Ils n'en avaient pas de lecture structurée, documentée, spatialement argumentée.</p>
-            </div>
-
-            <div class="case-block">
-              <div class="case-block-label">Démarche</div>
-              <p>L'étude a mobilisé les données INSEE sur deux recensements, une analyse factorielle des correspondances pour dégager les grandes lignes de force qui structurent les différences entre communes, des cartographies thématiques originales produites sous QGIS, un questionnaire ménages dans les trois bourgs-centres et des entretiens avec les acteurs institutionnels du territoire (directeur du SCoT, urbaniste, spécialiste du patrimoine). La démarche mixte n'était pas un choix méthodologique abstrait : certaines choses se lisent dans les données, d'autres seulement sur le terrain.</p>
-            </div>
-
-            <div class="case-result">
-              <div class="result-label">Résultat</div>
-              <p>Diagnostic conduit de la donnée brute à la recommandation opérationnelle : traitement statistique, cartographies originales, enquête terrain, entretiens institutionnels. La même démarche est mobilisable sur des territoires insulaires ultramarins confrontés à des fragilités sociales et démographiques analogues.</p>
-            </div>
-
-            <div class="pill-row" style="margin-top:28px;"><span class="pill">AFC</span><span class="pill">QGIS</span><span class="pill">INSEE</span><span class="pill">Enquête ménages</span><span class="pill">Politiques publiques</span></div>
-          </div>
-        </article>
-
-        <!-- CAS 03 -->
-        <article class="case-article">
-          <div>
-            <div class="case-num">03</div>
-            <div class="case-domain">Gouvernance SI<br>Conformité réglementaire</div>
-          </div>
-          <div class="case-content">
-            <h3>Résilience numérique et conformité NIS2 : Note stratégique pour un ESMS mahorais</h3>
-
-            <div class="case-block">
-              <div class="case-block-label">Situation</div>
-              <p>Une association médico-sociale mahoraise gère des données parmi les plus sensibles qui soient : dossiers de mineurs, situations judiciaires, données de santé, informations sur des personnes en situation de grande vulnérabilité. Ces données étaient stockées sur des serveurs internes vieillissants, sans classification, sans règles d'accès formalisées, sans plan de sauvegarde opérationnel. La direction le savait confusément. Elle n'en mesurait pas l'exposition réelle, ni juridique ni opérationnelle.</p>
-            </div>
-
-            <div class="case-block">
-              <div class="case-block-label">Démarche</div>
-              <p>La note produite articule trois cadres réglementaires superposés (CASF, RGPD, NIS2), appliqués à la réalité concrète de l'organisation : ses outils, ses flux, ses partenaires institutionnels, son contexte territorial. L'analyse n'est pas restée à l'échelle interne. Elle a lu l'exposition de l'association dans son écosystème (ARS, Département, Justice, prestataires techniques), parce que la surface de risque d'une organisation se mesure aussi à ce qui la traverse, pas seulement à ce qu'elle contient.</p>
-            </div>
-
-            <div class="case-result">
-              <div class="result-label">Résultat</div>
-              <p>Une note qui a permis à la direction générale de prendre des décisions sur son système d'information avec une vision claire des risques juridiques, organisationnels et techniques. Le réflexe du géographe : lire le système entier avant de recommander.</p>
-            </div>
-
-            <div class="pill-row" style="margin-top:28px;"><span class="pill">NIS2</span><span class="pill">RGPD</span><span class="pill">CASF</span><span class="pill">Gouvernance SI</span><span class="pill">Analyse de risques</span></div>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- MÉTHODES & COMPÉTENCES -->
-  <section id="methodes" style="background:var(--paper-2);">
-    <div class="inner">
-      <div class="section-label">04 · Méthodes et compétences</div>
-      <h2>Le profil technique</h2>
-      <p class="section-intro">Des outils et des méthodes au service d'une seule question : comment rendre la donnée suffisamment fiable et lisible pour qu'elle serve vraiment la décision ?</p>
-
-      <div class="method-grid">
-        <div class="method"><div class="icon">∿</div><h3>Qualité des données</h3><p>Détection des incohérences, doublons, champs obligatoires, règles métier et traçabilité des corrections à la source.</p></div>
-        <div class="method"><div class="icon">◈</div><h3>Architecture reporting</h3><p>Structuration de bases de collecte, bases intermédiaires, flux de consolidation et publication décisionnelle multi-niveaux.</p></div>
-        <div class="method"><div class="icon">⊕</div><h3>Analyse territoriale</h3><p>Lecture spatiale, données publiques INSEE, cartographie thématique, diagnostic territorial et méthodes mixtes.</p></div>
-        <div class="method"><div class="icon">⟳</div><h3>Automatisation</h3><p>Apps Script pour automatiser les flux, contrôler la qualité, historiser et réduire les opérations manuelles répétitives.</p></div>
-      </div>
-
-      <div class="skills-grid">
-        <div class="skill-col">
-          <div class="skill-col-title">Données & Reporting</div>
-          <div class="skill-item"><span>Pilotage de la performance</span><div class="dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div></div></div>
-          <div class="skill-item"><span>Google Sheets</span><div class="dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div></div></div>
-          <div class="skill-item"><span>Looker Studio</span><div class="dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div></div></div>
-          <div class="skill-item"><span>Excel</span><div class="dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div></div></div>
-          <div class="skill-item"><span>Apps Script</span><div class="dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div><div class="dot"></div></div></div>
-        </div>
-        <div class="skill-col">
-          <div class="skill-col-title">Analyse & Méthodes</div>
-          <div class="skill-item"><span>Statistiques multivariées</span><div class="dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div><div class="dot"></div></div></div>
-          <div class="skill-item"><span>AFC / ACP</span><div class="dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div><div class="dot"></div></div></div>
-          <div class="skill-item"><span>Statistiques descriptives</span><div class="dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div></div></div>
-          <div class="skill-item"><span>R (en cours)</span><div class="dots"><div class="dot on"></div><div class="dot on"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
-          <div class="skill-item"><span>Contrôle qualité données</span><div class="dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div></div></div>
-        </div>
-        <div class="skill-col">
-          <div class="skill-col-title">Cartographie & SIG</div>
-          <div class="skill-item"><span>QGIS</span><div class="dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div><div class="dot"></div></div></div>
-          <div class="skill-item"><span>ArcGIS</span><div class="dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div><div class="dot"></div></div></div>
-          <div class="skill-item"><span>Analyse territoriale</span><div class="dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div></div></div>
-          <div class="skill-item"><span>Données publiques INSEE</span><div class="dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div></div></div>
-        </div>
-        <div class="skill-col">
-          <div class="skill-col-title">Gouvernance & Pilotage</div>
-          <div class="skill-item"><span>Architecture reporting</span><div class="dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div></div></div>
-          <div class="skill-item"><span>Appui à la direction</span><div class="dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div></div></div>
-          <div class="skill-item"><span>Gouvernance SI / RGPD</span><div class="dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div><div class="dot"></div></div></div>
-          <div class="skill-item"><span>Rédaction institutionnelle</span><div class="dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div></div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PARCOURS -->
-  <section id="parcours">
-    <div class="inner">
-      <div class="section-label">05 · Parcours</div>
-      <h2>Expériences et formation</h2>
-      <p class="section-intro">Un parcours construit à l'interface de la géographie, du médico-social, de la donnée opérationnelle et de l'appui à la décision publique.</p>
-
-      <div class="timeline">
-        <div class="time-card current">
-          <div class="date">Oct. 2024 · en cours</div>
-          <h3>Chargé d'appui au pilotage et à la performance</h3>
-          <div class="sub">Prestataire · Association médico-sociale multi-établissements, Mayotte (télétravail depuis La Réunion)</div>
-          <p>Système de pilotage intégré de l'activité multi-services, contrôle qualité automatisé, appui à la direction générale, relecture de rapports institutionnels, fiabilisation des données de facturation.</p>
-        </div>
-        <div class="time-card">
-          <div class="date">Mars 2023 · Sept. 2024</div>
-          <h3>Assistant de direction · Librairie</h3>
-          <div class="sub">Mayotte</div>
-          <p>Appui à la direction d'une structure indépendante : suivi de caisse, stocks et indicateurs de vente, choix éditoriaux de mise en avant. Première expérience de pilotage par la donnée, à petite échelle.</p>
-        </div>
-        <div class="time-card">
-          <div class="date">Jan. 2022 · Jan. 2023</div>
-          <h3>Professeur contractuel d'Histoire-Géographie · Spécialités</h3>
-          <div class="sub">Lycée de Chirongui, Mayotte</div>
-          <p>Enseignement en classes de spécialité : initiation aux sciences sociales, lecture critique des sources, raisonnement rigoureux à partir de données complexes.</p>
-        </div>
-        <div class="time-card">
-          <div class="date">Oct. 2019 · Déc. 2021</div>
-          <h3>Doctorat en géographie et aménagement <em style="font-size:.85rem; font-weight:400;">(non soutenu)</em></h3>
-          <div class="sub">Transition énergétique comme innovation sociale et territoriale (Occitanie)</div>
-          <p>Recherche-action avec terrain fort. Arrêt contraint (COVID-19). Formation à la conduite d'enquête et aux méthodes quantitatives et qualitatives appliquées aux territoires.</p>
-        </div>
-        <div class="time-card">
-          <div class="date">Sept. 2017 · Sept. 2019</div>
-          <h3>Master GTDL : Gestion des territoires et développement local</h3>
-          <div class="sub">Parcours ERDL · Université Paul-Valéry Montpellier 3 · Dir. Pascal Chevalier</div>
-          <p>Diagnostic territorial Pays Cœur d'Hérault : AFC, cartographie SIG, enquête ménages, entretiens institutionnels. Stage M1 : PTCE 3.EVA (Haute Vallée de l'Aude). Stage M2 : EIFER, Karlsruhe, retours économiques des projets citoyens d'énergies renouvelables.</p>
-        </div>
-        <div class="time-card">
-          <div class="date">2013 · 2016</div>
-          <h3>Licence Géographie et Aménagement</h3>
-          <div class="sub">Université de Nantes · IGARUN</div>
-          <p>Formation fondamentale en géographie humaine, aménagement du territoire, cartographie, analyse spatiale et méthodes quantitatives en sciences sociales.</p>
         </div>
       </div>
     </div>
