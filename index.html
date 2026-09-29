@@ -134,6 +134,16 @@
     .visual-caption { margin-top: 10px; font-family: var(--mono); font-size: .62rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
     .sub-label { font-family: var(--mono); font-size: .7rem; letter-spacing: .16em; text-transform: uppercase; color: var(--teal); }
 
+    .offer-grid { margin-top: 44px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .offer-card { background: var(--paper); border: 1px solid var(--line); border-radius: 20px; padding: 28px; display: flex; flex-direction: column; }
+    .offer-card.start { border-color: var(--teal); background: #f7f4ed; }
+    .offer-num { font-family: var(--mono); font-size: .62rem; letter-spacing: .12em; color: var(--bronze); margin-bottom: 12px; }
+    .offer-card h3 { font-family: var(--serif); font-weight: 500; font-size: 1.22rem; line-height: 1.22; margin-bottom: 12px; }
+    .offer-card p { font-size: .94rem; color: var(--ink-soft); line-height: 1.65; }
+    .offer-tag { margin-top: 16px; align-self: flex-start; font-family: var(--mono); font-size: .6rem; letter-spacing: .1em; text-transform: uppercase; color: var(--teal-dark); border: 1px solid var(--teal); border-radius: 999px; padding: 4px 10px; }
+    @media (max-width: 1060px) { .offer-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 720px) { .offer-grid { grid-template-columns: 1fr; } }
+
     /* SECTIONS */
     section { position: relative; z-index: 1; padding: 108px var(--pad); }
     .inner { max-width: var(--max); margin: 0 auto; }
@@ -349,6 +359,7 @@
   <nav>
     <a href="#accueil" class="brand">Louis <span>Maufrais</span></a>
     <ul class="nav-links">
+      <li><a href="#offres">Ce que je propose</a></li>
       <li><a href="#cas">Études de cas</a></li>
       <li><a href="#competences">Compétences</a></li>
       <li><a href="#parcours">Parcours</a></li>
@@ -371,18 +382,28 @@
 
       <div class="hero-actions">
         <a class="btn btn-primary" href="#cas">Lire les études de cas</a>
-        <a class="btn btn-secondary" href="#parcours">Voir mon parcours</a>
+        <a class="btn btn-secondary" href="#offres">Ce que je propose</a>
       </div>
 
       <div class="hero-figures">
         <div><div class="fig-num">50</div><div class="fig-label">structures dont l'activité est suivie dans le reporting</div></div>
         <div><div class="fig-num">~150</div><div class="fig-label">salariés qui alimentent ces données</div></div>
-        <div><div class="fig-num">76,6 %</div><div class="fig-label">de données conformes mesurées dès la première version</div></div>
+        <div><div class="fig-num">76,6 %</div><div class="fig-label">de données conformes dès la première itération du contrôle qualité</div></div>
         <div><div class="fig-num">1</div><div class="fig-label">seule source de vérité pour le pilotage et les rapports d'activité</div></div>
       </div>
 
     </div>
   </header>
+
+  <!-- OFFRES -->
+  <section id="offres" style="background:var(--paper-2);">
+    <div class="inner">
+      <div class="section-label">Ce que je propose</div>
+      <h2>Cinq missions,<br>un livrable clair.</h2>
+      <p class="section-intro">Pour les établissements et services sociaux et médico-sociaux, les associations et les collectivités : des missions courtes, avec un livrable clair.</p>
+      <div class="offer-grid"><div class="offer-card"><div class="offer-num">01</div><h3>Diagnostic des données et du reporting</h3><p>Un état des lieux des fichiers, des doublons et des écarts entre ce qui est saisi et ce qui est rapporté, avec des recommandations classées par priorité.</p></div><div class="offer-card"><div class="offer-num">02</div><h3>Tableau de bord d'activité et de facturation</h3><p>Occupation réelle contre prévisionnel, facturation mensuelle et alertes sur la qualité des données, lisibles par la direction sans retraitement.</p></div><div class="offer-card"><div class="offer-num">03</div><h3>Préparation d'une évaluation externe (HAS)</h3><p>Une base de suivi unique, le planning des visites, la réservation des salles, les invitations et les rappels automatisés.</p></div><div class="offer-card"><div class="offer-num">04</div><h3>Outils RH et documents</h3><p>Planning collectif prévu/réalisé, variables de paie, génération de documents individualisés depuis une source unique (délégations de pouvoirs).</p></div><div class="offer-card"><div class="offer-num">05</div><h3>Note de dimensionnement des moyens</h3><p>Un argumentaire en équivalents temps plein pour un dialogue avec un financeur, avec un calcul lisible de bout en bout.</p></div><div class="offer-card"><div class="offer-num">→</div><h3>Comment ça se passe</h3><p>Un premier échange pour repérer votre principal point de blocage (reporting, facturation, évaluation, RH), puis une proposition cadrée sur une seule mission.</p></div></div>
+    </div>
+  </section>
 
   <!-- ÉTUDES DE CAS -->
   <section id="cas">
@@ -401,7 +422,7 @@
             <h3>Un pilotage unique de l'activité de 50 structures</h3>
             <div class="case-block"><div class="case-block-label">Problème</div><p>L'activité de 50 structures était suivie dans des fichiers différents, avec des règles de saisie propres à chacun. Avant la réalisation des rapports d'activité, deux versions des chiffres coexistaient : celle du pilotage et celle des rapports.</p></div>
             <div class="case-block"><div class="case-block-label">Action</div><p>J'ai normalisé les bases de saisie par service, automatisé la consolidation en traçant l'origine de chaque donnée, ajouté des contrôles qualité (doublons, incohérences, champs manquants) et construit le tableau de bord de restitution pour la direction.</p></div>
-            <div class="case-result"><div class="result-label">Résultat</div><p>Pilotage et rapports d'activité reposent désormais sur les mêmes données : plus de double vérité. Dès la première version, 76,6 % des données étaient conformes, et les 23,4 % restants étaient identifiés, localisés par service et attribuables à la personne qui les corrige. Environ 150 salariés alimentent ce dispositif.</p></div>
+            <div class="case-result"><div class="result-label">Résultat</div><p>Pilotage et rapports d'activité reposent désormais sur les mêmes données : plus de double vérité. Sur un dispositif d'hébergement d'urgence, 76,6 % des données étaient conformes dès la première itération du contrôle qualité, et les 23,4 % restants étaient identifiés, localisés par service et attribuables à la personne qui les corrige. Environ 150 salariés alimentent ce dispositif.</p></div>
             
             <div class="case-visual">
             <div style="font-family:var(--mono); font-size:.62rem; letter-spacing:.1em; text-transform:uppercase; color:rgba(201,173,126,.7); margin-bottom:18px;">Maquette illustrative · Données fictives · Looker Studio</div>
@@ -588,7 +609,7 @@
 
       <div class="sub-label" style="margin-top:56px;">Formation</div>
       <div class="timeline" style="margin-top:22px;">
-<div class="time-card"><div class="date">2019 · 2021</div><h3>Doctorat en géographie et aménagement (non soutenu)</h3><div class="sub">Transition énergétique et innovation territoriale (Occitanie)</div><p>Recherche-action de terrain : conduite d'enquêtes, méthodes quantitatives et qualitatives. Arrêt en 2021 (COVID-19).</p></div><div class="time-card"><div class="date">2017 · 2019</div><h3>Master GTDL · Université Paul-Valéry Montpellier 3</h3><div class="sub">Gestion des territoires et développement local</div><p>Diagnostic territorial (AFC, SIG, enquête ménages). Stages : PTCE 3.EVA (Haute Vallée de l'Aude), EIFER (Karlsruhe).</p></div><div class="time-card"><div class="date">2013 · 2016</div><h3>Licence Géographie et Aménagement</h3><div class="sub">Université de Nantes</div><p></p></div>
+<div class="time-card"><div class="date">2019 · 2021</div><h3>Doctorat en géographie et aménagement (non soutenu)</h3><div class="sub">Transition énergétique et innovation territoriale (Occitanie)</div><p>Recherche-action de terrain : conduite d'enquêtes, méthodes quantitatives et qualitatives. Arrêt en 2021 (COVID-19).</p></div><div class="time-card"><div class="date">2017 · 2019</div><h3>Master Espaces ruraux et développement local (GTDL)</h3><div class="sub">Parcours ERDL · Université Paul-Valéry Montpellier 3 et IAMM</div><p>Diagnostic territorial (AFC, SIG, enquête ménages). Stages : PTCE 3.EVA (Haute Vallée de l'Aude), EIFER (Karlsruhe).</p></div><div class="time-card"><div class="date">2013 · 2016</div><h3>Licence Géographie et Aménagement</h3><div class="sub">Université de Nantes</div><p>Stage au GAB 44 : diagnostic agro-environnemental (filière biologique, qualité de l'eau).</p></div>
       </div>
     </div>
   </section>
@@ -710,7 +731,7 @@
   <section id="contact">
     <div class="inner">
       <h2>Travaillons sur des données utiles, contrôlées et lisibles.</h2>
-      <p class="section-intro">Disponible pour des missions de pilotage de la performance, structuration de reporting, gouvernance documentaire et appui à la décision, secteurs public, associatif et institutionnel à La Réunion.</p>
+      <p class="section-intro">Disponible pour des missions d'appui au pilotage, de structuration du reporting et de préparation d'évaluations, pour les établissements et services sociaux et médico-sociaux, les associations et les collectivités, à La Réunion et à distance.</p>
       <div class="contact-details">
         <a href="mailto:louis.maufrais@gmail.com" class="contact-chip hl">✉ louis.maufrais@gmail.com</a>
         <a href="https://www.linkedin.com/in/louis-maufrais-913421114/" class="contact-chip hl" target="_blank" rel="noopener">LinkedIn</a>
